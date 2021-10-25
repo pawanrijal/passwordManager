@@ -1,0 +1,33 @@
+{% extends 'master/base.html' %} {% block body %}
+<div class="container">
+
+<div class="container">
+    {% comment %} <h1><a href="{% url 'index' %}">Home</a></h1> {% endcomment %}
+  <h1>Your Passwords</h1>
+  
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Website Name</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for password in passwords.password_set.all %}
+    
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{password}}</td>
+      <td>{{password.password}}</td>
+      
+    </tr> 
+    
+    
+    {% endfor %}
+    
+  </tbody>
+</table>
+</div>
+
+{%endblock%}

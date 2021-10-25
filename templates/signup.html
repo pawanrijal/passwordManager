@@ -1,0 +1,55 @@
+{% extends 'master/base.html' %} 
+{% block body %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>SignUp</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+
+  </head>
+
+  <body class="text-center mt-5">
+      {% if messages %}
+      <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.level == DEFAULT_MESSAGE_LEVEL.ERROR %}Important:{% endif %}
+      {{message}}
+      </li>
+      
+      
+      
+      {% endfor %}
+      
+      
+      
+      </ul>
+      
+      
+      {% endif %}
+    <form class="form-signin" method="POST">
+        {%csrf_token%}
+      
+      <h1 class="h3 mb-3 font-weight-normal">Please signup</h1>
+      
+      <input type="text" id="inputEmail" class="form-control" placeholder="Username" required name="username">
+     
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
+      
+      <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required name="cpassword">
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    </form>
+  </body>
+</html>
+
+
+{%endblock%}

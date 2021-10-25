@@ -1,0 +1,14 @@
+{% extends 'master/base.html' %} {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{%url 'login' %}"  class="btn btn-outline-success">Login</a>
+        </div>
+        <div class="col-md-6">
+            <a href="{%url 'signup' %}"  class="btn btn-outline-success">Signup</a>
+        </div>
+    </div>
+
+</div>
+
+{%endblock%}
